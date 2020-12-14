@@ -1,7 +1,8 @@
 <?php namespace Listener;
 
 require('PaypalIPN.php');
-
+$raw_post_data = file_get_contents('php://input');
+file_put_contents('php://stderr', print_r($raw_post_data, TRUE));
 use PaypalIPN;
 
 $ipn = new PaypalIPN();
